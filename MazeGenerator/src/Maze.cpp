@@ -73,22 +73,6 @@ void Maze::PrintAsAsciiMap()
 	delete[] mapLines;
 }
 
-static inline bool IsPo2(uint32_t n)
-{
-	return ((n & (n - 1)) == 0);
-}
-
-static inline uint32_t NextPo2(uint32_t n)
-{
-	n |= n >> 1;
-	n |= n >> 2;
-	n |= n >> 4;
-	n |= n >> 8;
-	n |= n >> 16;
-	++n;
-	return n;
-}
-
 void Maze::GetImage(MAZE_IMAGE_RESULT* result, int scale,
 	uint32_t backColour, uint32_t foreColour)
 {
